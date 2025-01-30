@@ -1,0 +1,226 @@
+/* IrCurso.css */
+
+/* Estilos globales */
+.curso-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Estilos del título principal */
+.curso-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.curso-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-style: italic;
+    font-weight: 900;
+    color: #062140;
+    margin-bottom: 10px;
+}
+
+.curso-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilos para el contenido del curso */
+.curso-content {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.curso-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el video */
+.curso-video {
+    margin-bottom: 30px;
+}
+
+.curso-video video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de marcar como visto */
+.home-btn-primary {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Color verde */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-btn-primary:hover {
+    background-color: #45a049; /* Cambio de color en hover */
+}
+
+/* Estilo exclusivo para el botón "Atrás" en la página IrCurso */
+.curso-page .home-btn-secondary {
+    padding: 10px 20px;
+    background-color: #f44336; /* Color rojo */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block; /* Para que el botón ocupe una línea completa */
+    margin: 20px auto; /* Centrado horizontal */
+    text-align: center;
+}
+
+.curso-page .home-btn-secondary:hover {
+    background-color: #d32f2f; /* Cambio de color en hover */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.curso-page .home-btn-secondary:active {
+    transform: scale(0.95); /* Efecto de clic */
+}
+
+/* Estilos para el botón "Marcar avance" */
+.mark-progress-btn {
+    padding: 10px 20px;
+    background-color: #2196f3; /* Azul */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.mark-progress-btn:hover {
+    background-color: #1e88e5; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.mark-progress-btn:active {
+    transform: scale(0.95);
+}
+
+/* Estilos para el progreso del curso */
+.progreso {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.progreso h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.progress {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+/* Responsividad para laptops (pantallas entre 1024px y 1200px) */
+@media screen and (max-width: 1200px) {
+    .curso-header h1 {
+        font-size: 2.5rem; /* Reduce el tamaño del título principal */
+    }
+    .curso-header p {
+        font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+    }
+    .curso-content h2 {
+        font-size: 1.8rem; /* Reduce el tamaño del encabezado */
+    }
+    .curso-video video {
+        border-radius: 8px; /* Ajusta las esquinas */
+    }
+    .home-btn-primary,
+    .curso-page .home-btn-secondary,
+    .mark-progress-btn {
+        font-size: 0.95rem; /* Reduce el tamaño de los botones */
+        padding: 8px 16px; /* Ajusta el espacio interno */
+    }
+    .progress-bar {
+        height: 18px; /* Reduce la altura de la barra de progreso */
+    }
+}
+
+/* Responsividad para tablets (pantallas entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
+    .curso-header h1 {
+        font-size: 2rem; /* Título más pequeño */
+    }
+    .curso-header p {
+        font-size: 0.9rem; /* Subtítulo más compacto */
+    }
+    .curso-content h2 {
+        font-size: 1.5rem; /* Ajusta el tamaño del encabezado */
+    }
+    .curso-video video {
+        border-radius: 6px; /* Esquinas más ligeras */
+    }
+    .home-btn-primary,
+    .curso-page .home-btn-secondary,
+    .mark-progress-btn {
+        font-size: 0.9rem; /* Botones más pequeños */
+        padding: 8px 14px;
+    }
+    .progress-bar {
+        height: 16px; /* Reduce aún más la altura */
+    }
+}
+
+/* Responsividad para celulares (pantallas menores o iguales a 768px) */
+@media screen and (max-width: 768px) {
+    .curso-page {
+        padding: 15px; /* Reduce el padding general */
+    }
+    .curso-header h1 {
+        font-size: 1.8rem; /* Título más compacto */
+    }
+    .curso-header p {
+        font-size: 0.85rem; /* Texto más pequeño */
+    }
+    .curso-content h2 {
+        font-size: 1.2rem; /* Tamaño reducido para encabezados */
+    }
+    .curso-video {
+        margin-bottom: 20px; /* Reduce el espacio inferior */
+    }
+    .curso-video video {
+        border-radius: 5px;
+    }
+    .home-btn-primary,
+    .curso-page .home-btn-secondary,
+    .mark-progress-btn {
+        font-size: 0.85rem; /* Botones más compactos */
+        padding: 6px 12px; /* Padding reducido */
+    }
+    .progreso h3 {
+        font-size: 1.2rem; /* Texto más pequeño en progreso */
+    }
+    .progress-bar {
+        height: 14px; /* Altura mínima */
+    }
+    .progress {
+        transition: width 0.3s ease; /* Suaviza la transición para dispositivos más lentos */
+    }
+}

@@ -1,0 +1,74 @@
+/* General para el componente Organigrama */
+.organigrama {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.organigrama .contenido-principal {
+    margin-top: -15px; /* Espacio debajo del menú */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+}
+
+.organigrama .seccion {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.organigrama .seccion h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: #062140;
+    margin-bottom: 20px;
+}
+
+/* Contenedor para las imágenes */
+.organigrama .seccion .scroll-container {
+    display: flex;
+    justify-content: center; /* Centra las imágenes */
+    overflow-x: auto; /* Activa el desplazamiento horizontal */
+    overflow-y: hidden; /* Evita desplazamiento vertical innecesario */
+    width: 100%; /* Mantiene el contenedor en ancho completo */
+    -webkit-overflow-scrolling: touch; /* Mejora la experiencia en dispositivos táctiles */
+}
+
+.organigrama .seccion img {
+    width: auto; /* Mantiene su ancho original */
+    max-width: 100%; /* Limita el ancho en pantallas grandes */
+    height: auto; /* Mantiene proporciones */
+    border: 2px solid #ccc; /* Opcional: borde */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .organigrama .seccion h2 {
+        font-size: 2rem; /* Reduce el tamaño de los títulos */
+    }
+
+    /* Contenedor para activar desplazamiento horizontal */
+    .organigrama .seccion .scroll-container {
+        overflow-x: scroll; /* Scroll horizontal activado */
+    }
+
+    .organigrama .seccion img {
+        max-width: none; /* Desactiva la limitación del ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    .organigrama .seccion h2 {
+        font-size: 1.8rem;
+    }
+}

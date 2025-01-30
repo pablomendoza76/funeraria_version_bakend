@@ -1,0 +1,209 @@
+/* Estilos generales para el contenedor de Inicio */
+.inicio {
+  font-family: Arial, sans-serif; /* Fuente para la página */
+}
+
+.inicio .imagen-inicio {
+  width: 100%; /* Ancho completo */
+  max-width: 100%; /* Previene que la imagen se agrande más de su contenedor */
+  height: auto; /* Mantiene la proporción */
+  margin-top: 20px; /* Aumenta la distancia entre la imagen y el menú para mayor separación */
+  margin-bottom: 20px; /* Espacio abajo de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto hover en la imagen */
+.inicio .imagen-inicio:hover {
+  transform: scale(1.03); /* Aumenta un 5% la imagen */
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex; /* Utiliza un diseño flexible para distribuir los elementos de la barra de navegación. */
+  justify-content: space-between; /* Coloca los elementos en los extremos de la barra (espaciados uniformemente). */
+  align-items: center; /* Alinea verticalmente los elementos al centro. */
+  padding: 20px; /* Añade espacio interno alrededor de la barra. */
+  background-color: white; /* Establece el fondo de la barra de navegación en blanco. */
+  border-bottom: 2px solid #ddd; /* Añade un borde inferior gris claro. */
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1); /* Aplica una sombra sutil debajo de la barra. */
+  height: 40px; /* Establece una altura fija para la barra */
+}
+
+/* Logo */
+.navbar .logo h1 {
+  font-size: 24px; /* Tamaño de fuente del texto del logo. */
+  color: #163C72; /* Color del texto del logo (azul oscuro). */
+}
+
+/* Menú principal */
+.navbar .menu ul {
+  list-style: none; /* Elimina los puntos o numeración predeterminados de la lista. */
+  display: flex; /* Dispone los elementos de la lista en una línea horizontal. */
+  padding: 0; /* Elimina el relleno predeterminado de la lista. */
+  margin: 0; /* Elimina el margen predeterminado de la lista. */
+}
+
+.navbar .menu ul li {
+  margin: 0 10px; /* Añade un margen horizontal entre los elementos del menú. */
+  position: relative; /* Establece el contexto para posicionar elementos secundarios (como menús desplegables). */
+}
+
+.navbar .menu ul li .dropdown-btn {
+  background: none; /* Elimina el fondo del botón. */
+  border: none; /* Elimina el borde del botón. */
+  font-size: 16px; /* Tamaño de fuente del botón. */
+  padding: 5px 10px; /* Añade espacio interno alrededor del texto del botón. */
+  color: black; /* Color del texto del botón. */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable. */
+  transition: color 0.3s ease; /* Suaviza la transición del color cuando se activa el hover. */
+}
+
+.navbar .menu ul li .dropdown-btn:hover {
+  color: #007BFF; /* Cambia el color del texto al azul al pasar el cursor. */
+  text-decoration: underline; /* Subraya el texto al pasar el cursor. */
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+  display: none; /* Oculta el menú desplegable por defecto. */
+  position: absolute; /* Posiciona el menú relativo al contenedor padre. */
+  top: 100%; /* Coloca el menú justo debajo del elemento padre. */
+  left: 0; /* Alinea el menú al borde izquierdo del padre. */
+  background-color: white; /* Establece un fondo blanco para el menú. */
+  border: 1px solid #ddd; /* Añade un borde gris claro alrededor del menú. */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra para dar profundidad al menú. */
+  border-radius: 5px; /* Redondea las esquinas del menú. */
+  z-index: 1000; /* Asegura que el menú aparezca por encima de otros elementos. */
+  list-style: none; /* Elimina los puntos de la lista. */
+  padding: 10px 0; /* Añade espacio interno vertical al menú. */
+  width: 200px; /* Establece un ancho fijo para el menú. */
+}
+
+.navbar .menu ul li:hover .dropdown-menu {
+  display: block; /* Muestra el menú desplegable al pasar el cursor sobre el elemento padre. */
+}
+
+.dropdown-menu li {
+  padding: 8px 15px; /* Añade espacio interno alrededor de cada elemento del menú. */
+  border-bottom: 1px solid #ddd; /* Añade una línea divisoria entre los elementos del menú. */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable. */
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none; /* Elimina la línea divisoria en el último elemento del menú. */
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0; /* Cambia el fondo del elemento al pasar el cursor. */
+}
+
+/* Enlaces */
+a {
+  color: black; /* Establece el color predeterminado de los enlaces. */
+  text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces. */
+}
+
+a:hover {
+  text-decoration: none; /* Asegura que los enlaces no tengan subrayado al pasar el cursor. */
+}
+
+/* Menú móvil */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical para pantallas pequeñas. */
+    align-items: flex-start; /* Alinea los elementos al inicio en lugar del centro. */
+  }
+
+  .menu ul {
+    flex-direction: column; /* Cambia la disposición de los elementos del menú a una columna. */
+    width: 100%; /* Establece que el menú ocupe todo el ancho del contenedor. */
+  }
+
+  .menu li {
+    width: 100%; /* Cada elemento del menú ocupa todo el ancho del contenedor. */
+    margin: 5px 0; /* Añade espacio vertical entre los elementos del menú. */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Muestra el botón del menú móvil. */
+    background: none; /* Elimina el fondo del botón. */
+    border: none; /* Elimina el borde del botón. */
+    font-size: 24px; /* Ajusta el tamaño del texto o icono del botón. */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable. */
+  }
+
+  .dropdown-menu {
+    width: 100%; /* Asegura que el menú desplegable ocupe todo el ancho del contenedor. */
+    left: 0; /* Alinea el menú al borde izquierdo del contenedor. */
+    top: 50px; /* Coloca el menú ligeramente más abajo para evitar superposición. */
+  }
+}
+
+/* Estilos para el contenedor y menú en pantallas pequeñas de laptops */
+@media (max-width: 1024px) {
+  .inicio .navbar {
+    flex-wrap: wrap; /* Envuelve los elementos del navbar cuando no quepan */
+  }
+
+  .inicio .mobile-menu-button {
+    display: block; /* Muestra el botón */
+  }
+
+  .inicio .menu {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .inicio .menu.mobile-open {
+    display: block;
+  }
+
+  .inicio .menu ul {
+    flex-direction: column;
+  }
+
+  .inicio .menu li {
+    margin: 10px 0;
+  }
+
+  .inicio .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    padding-left: 20px;
+  }
+
+  .inicio .imagen-inicio {
+    margin-top: 20px; /* Aumenta la separación en pantallas más grandes */
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilos para pantallas de tablet */
+@media (max-width: 768px) {
+  .inicio .imagen-inicio {
+    max-width: 100%;
+    margin-top: 10px; /* Menos separación en tablets */
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilos para teléfonos móviles */
+@media (max-width: 480px) {
+  .inicio .imagen-inicio {
+    margin-top: 5px; /* Menos separación en móviles */
+    margin-bottom: 15px;
+  }
+
+  .inicio .navbar {
+    padding: 15px;
+  }
+
+  .inicio .logo img {
+    max-width: 120px; /* Reducción del tamaño del logo */
+  }
+}

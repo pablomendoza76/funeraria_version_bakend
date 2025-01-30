@@ -1,0 +1,169 @@
+/* Contenedor principal */
+.login-container {
+    display: flex; /* Utilizamos flexbox para distribuir las secciones en fila */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    font-family: Arial, sans-serif; /* Fuentes para todo el formulario */
+}
+
+/* Sección izquierda - Imagen */
+.login-left {
+    width: 50%; /* La imagen ocupará la mitad izquierda */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    background-color: #f5f5f5; /* Fondo gris suave */
+}
+
+/* Estilo de la imagen en la sección izquierda */
+.login-image {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    max-height: 100%; /* Asegura que la imagen no se estire */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin perder proporción */
+}
+
+/* Sección derecha - Formulario de Login */
+.login-right {
+    width: 50%; /* La sección de login ocupa la otra mitad */
+    padding: 20px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Sombra a la derecha para dar efecto de separación */
+}
+
+/* Título del formulario */
+h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 40px; /* Tamaño de fuente del título */
+    color: #333333; /* Color oscuro para el texto */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilo de los campos del formulario */
+.form-group {
+    width: 300px; /* Los campos ocuparán el 100% de la sección */
+    margin-bottom: 15px; /* Espaciado entre los campos */
+}
+
+label {
+    display: block; /* Hace que el label ocupe una línea completa */
+    margin-bottom: 5px; /* Espaciado debajo del label */
+    font-size: 14px; /* Tamaño de fuente de los labels */
+    color: #555555; /* Color gris suave para los labels */
+}
+
+input {
+    width: 100%; /* Los campos de texto ocuparán el 100% del ancho disponible */
+    padding: 10px; /* Espaciado interno en los campos */
+    font-size: 14px; /* Tamaño de fuente de los campos */
+    border: 1px solid #cccccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del elemento */
+}
+
+/* Estilo para el botón de login */
+.btn-login {
+    width: 100%; /* El botón ocupará el 100% del ancho */
+    max-width: 400px; /* El tamaño máximo del botón será 400px */
+    padding: 10px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #ffffff; /* Texto blanco */
+    background-color: #007bff; /* Fondo azul para el botón */
+    border: none; /* Elimina los bordes del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+/* Efecto hover para el botón de login */
+.btn-login:hover {
+    background-color: #0056b3; /* Color más oscuro de azul cuando el cursor pasa sobre el botón */
+}
+
+/* Mensaje de error */
+.error-message {
+    color: red; /* Color rojo para el mensaje de error */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    margin-bottom: 10px; /* Espaciado debajo del mensaje de error */
+}
+
+/* Estilo para el enlace de "Regresar a Inicio" */
+.back-to-home {
+    margin-top: 20px; /* Espaciado superior */
+    text-align: center; /* Centra el enlace */
+}
+
+.back-link {
+    color: #007bff; /* Azul para el enlace */
+    background: none; /* Elimina el fondo del enlace */
+    border: none; /* Elimina el borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el enlace */
+    font-size: 14px; /* Tamaño de fuente */
+    text-decoration: underline; /* Subraya el enlace */
+    transition: color 0.3s ease; /* Transición para el color del enlace */
+}
+
+/* Efecto hover para el enlace "Regresar a Inicio" */
+.back-link:hover {
+    color: #0056b3; /* Color más oscuro cuando el cursor pasa sobre el enlace */
+}
+
+/* Estilos responsivos */
+
+@media (max-width: 1024px) {
+    /* Ajuste para tablets y pantallas de tamaño medio */
+    .login-container {
+        flex-direction: column; /* Apilan las secciones de izquierda y derecha */
+    }
+
+    .login-left, .login-right {
+        width: 100%; /* Ambas secciones ocupan el 100% del ancho */
+    }
+
+    /* Ajustes del título */
+    h2 {
+        font-size: 20px; /* Reduce el tamaño del título */
+    }
+
+    /* Ajuste de tamaños en los botones y campos */
+    .btn-login {
+        font-size: 14px; /* Tamaño de fuente más pequeño en botones */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuste para tablets más pequeñas */
+    .form-group {
+        max-width: 100%; /* Los campos ocupan el 100% del ancho */
+    }
+
+    input {
+        padding: 8px; /* Reducción del padding */
+    }
+
+    .btn-login {
+        padding: 8px; /* Reducción del padding */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para pantallas de teléfonos móviles */
+    h2 {
+        font-size: 18px; /* Tamaño de fuente aún más pequeño */
+    }
+
+    .form-group {
+        max-width: 100%; /* Los campos ocupan el 100% del ancho */
+    }
+
+    input {
+        padding: 8px; /* Reduce el padding en los campos */
+        font-size: 12px; /* Reduce el tamaño de la fuente */
+    }
+
+    .btn-login {
+        font-size: 14px; /* Reduce el tamaño de la fuente en el botón */
+    }
+}

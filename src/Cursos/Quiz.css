@@ -1,0 +1,165 @@
+.quiz-page {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.quiz-header p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.home-btn-secondary, .quiz-submit-btn {
+  background-color: #ffffff;
+  color: #2575fc;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.home-btn-secondary:hover, .quiz-submit-btn:hover {
+  transform: scale(1.05);
+  background-color: #6a11cb;
+  color: #fff;
+}
+
+.quiz-form {
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-question h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.quiz-option {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.quiz-submit-btn {
+  width: 100%;
+}
+
+.quiz-result {
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-result h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.quiz-result p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+/* Responsividad para laptops (pantallas entre 1024px y 1200px) */
+@media screen and (max-width: 1200px) {
+  .quiz-header h1 {
+      font-size: 2rem; /* Reduce el tamaño del encabezado */
+  }
+  .quiz-header p {
+      font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+  }
+  .quiz-form, .quiz-result {
+      max-width: 500px; /* Reduce el ancho máximo */
+      padding: 15px; /* Ajusta el padding */
+  }
+  .quiz-question h3 {
+      font-size: 1.3rem; /* Reduce ligeramente el tamaño de las preguntas */
+  }
+  .home-btn-secondary, .quiz-submit-btn {
+      font-size: 0.95rem; /* Botones más pequeños */
+      padding: 8px 12px;
+  }
+}
+
+/* Responsividad para tablets (pantallas entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
+  .quiz-header h1 {
+      font-size: 1.8rem; /* Reduce el tamaño del encabezado */
+  }
+  .quiz-header p {
+      font-size: 0.9rem; /* Texto más compacto */
+  }
+  .quiz-form, .quiz-result {
+      max-width: 400px; /* Ajusta el ancho máximo */
+      padding: 10px; /* Reduce el padding */
+  }
+  .quiz-question h3 {
+      font-size: 1.2rem; /* Reduce el tamaño de las preguntas */
+  }
+  .home-btn-secondary, .quiz-submit-btn {
+      font-size: 0.9rem; /* Botones más compactos */
+      padding: 8px 10px;
+  }
+}
+
+/* Responsividad para celulares (pantallas menores o iguales a 768px) */
+@media screen and (max-width: 768px) {
+  .quiz-page {
+      padding: 10px; /* Reduce el padding general */
+  }
+  .quiz-header h1 {
+      font-size: 1.5rem; /* Encabezado más pequeño */
+  }
+  .quiz-header p {
+      font-size: 0.8rem; /* Subtítulo más compacto */
+  }
+  .quiz-form, .quiz-result {
+      max-width: 100%; /* Usa todo el ancho disponible */
+      padding: 10px; /* Reduce el padding */
+  }
+  .quiz-question h3 {
+      font-size: 1rem; /* Tamaño compacto para las preguntas */
+  }
+  .quiz-option {
+      margin-bottom: 6px; /* Reduce el espaciado entre opciones */
+  }
+  .home-btn-secondary, .quiz-submit-btn {
+      font-size: 0.85rem; /* Botones más pequeños */
+      padding: 6px 8px;
+  }
+  .quiz-submit-btn {
+      width: 100%; /* Asegura que ocupe todo el ancho */
+  }
+}

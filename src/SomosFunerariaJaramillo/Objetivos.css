@@ -1,0 +1,505 @@
+/* Estilos generales */
+.objetivos {
+  font-family: Arial, sans-serif;
+  /* Establece la fuente a Arial o una fuente sans-serif en caso de que Arial no esté disponible */
+}
+
+/* Estilos para el navbar */
+.navbar {
+  background-color: white;
+  /* Fondo blanco para el navbar */
+  padding: 20px;
+  /* Espaciado interno de 20px alrededor del contenido */
+  display: flex;
+  /* Usamos Flexbox para distribuir los elementos */
+  justify-content: space-between;
+  /* Distribuye los elementos a lo largo de la línea, con espacio entre ellos */
+  align-items: center;
+  /* Alinea los elementos verticalmente en el centro */
+  border-bottom: 2px solid #ddd;
+  /* Añade un borde inferior de 2px de color gris claro */
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra sutil debajo del navbar */
+}
+
+.logo img {
+  max-width: 150px;
+  /* Limita el ancho de la imagen del logo a 150px */
+}
+
+/* Estilos para el menú */
+.menu ul {
+  list-style-type: none;
+  /* Elimina los puntos de la lista */
+  display: flex;
+  /* Usa Flexbox para alinear los elementos del menú horizontalmente */
+  padding: 0;
+  /* Elimina el relleno por defecto */
+  margin: 0;
+  /* Elimina el margen por defecto */
+}
+
+.menu li {
+  position: relative;
+  /* Posición relativa para poder usar elementos posicionados dentro del li */
+  margin: 0 12px;
+  /* Añade márgenes horizontales entre los elementos del menú */
+}
+
+.dropdown-btn {
+  background: none;
+  /* Sin fondo para el botón */
+  border: none;
+  /* Elimina el borde del botón */
+  cursor: pointer;
+  /* Muestra el cursor como puntero cuando pasa sobre el botón */
+  font-size: 16px;
+  /* Tamaño de fuente de 16px */
+  padding: 10px 15px;
+  /* Espaciado dentro del botón */
+  text-decoration: none;
+  /* Elimina la decoración del texto */
+}
+
+.dropdown-menu {
+  display: none;
+  /* Oculta el menú desplegable por defecto */
+  position: absolute;
+  /* Posiciona el menú de forma absoluta respecto a su contenedor */
+  background-color: white;
+  /* Fondo blanco para el menú */
+  border: 1px solid #ddd;
+  /* Borde gris claro alrededor del menú */
+  padding: 10px 0;
+  /* Relleno vertical de 10px */
+  list-style-type: none;
+  /* Elimina los puntos de la lista */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra suave alrededor del menú */
+  width: 200px;
+  /* Ancho fijo del menú */
+  z-index: 10;
+  /* Asegura que el menú esté por encima de otros elementos */
+  top: 100%;
+  /* Lo posiciona justo debajo del elemento */
+  left: 0;
+  /* Lo alinea a la izquierda del contenedor */
+  right: auto;
+  /* Evita que se posicione en el lado derecho */
+}
+
+.dropdown-menu.show {
+  display: block;
+  /* Muestra el menú cuando tiene la clase "show" */
+}
+
+.menu>ul>li:last-child .dropdown-menu {
+  left: auto;
+  /* Cambia la posición a la derecha para el último elemento */
+  right: 0;
+  /* Alinea el menú con el borde derecho del contenedor */
+}
+
+.menu li.active .dropdown-btn {
+  background-color: #f0f0f0;
+  /* Cambia el fondo del botón cuando el ítem está activo */
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  /* Espaciado en los ítems del menú */
+  border-bottom: 1px solid #ddd;
+  /* Añade un borde debajo de cada ítem */
+  margin: 0;
+  /* Elimina márgenes adicionales */
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+  /* Elimina el borde inferior del último ítem del menú */
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  /* Elimina la decoración del texto de los enlaces */
+  color: #333;
+  /* Color de texto gris oscuro */
+  display: block;
+  /* Hace que los enlaces ocupen toda la anchura del ítem */
+}
+
+.dropdown-menu li:hover {
+  background-color: #f4f4f4;
+  /* Cambia el fondo cuando el usuario pasa el ratón sobre un ítem */
+}
+
+.mobile-menu-button {
+  display: none;
+  /* Oculta el botón de menú móvil por defecto */
+  background: none;
+  /* Sin fondo para el botón */
+  border: none;
+  /* Elimina el borde del botón */
+  font-size: 24px;
+  /* Tamaño de fuente de 24px */
+  cursor: pointer;
+  /* Cambia el cursor a puntero */
+}
+
+/* Estilos para la lista desplegable en mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    /* Cambia la dirección del navbar a columna en pantallas pequeñas */
+    align-items: flex-start;
+    /* Alinea los elementos al principio */
+  }
+
+  .menu ul {
+    flex-direction: column;
+    /* Cambia la dirección del menú a columna */
+    width: 100%;
+    /* Hace que el menú ocupe todo el ancho */
+  }
+
+  .menu li {
+    width: 100%;
+    /* Hace que los ítems del menú ocupen todo el ancho */
+    margin: 5px 0;
+    /* Añade márgenes verticales entre los ítems */
+  }
+
+  .mobile-menu-button {
+    display: block;
+    /* Muestra el botón de menú en pantallas pequeñas */
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    /* Hace que el menú desplegable ocupe todo el ancho en móviles */
+    left: 0;
+    /* Lo posiciona al principio del contenedor */
+    top: 50px;
+    /* Lo coloca un poco más abajo de la parte superior */
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    /* Muestra el menú cuando se activa en móviles */
+  }
+}
+
+/* Contenedor principal de la sección de objetivos */
+.objetivos .contenido-principal {
+  text-align: center;
+  /* Centra el texto del título */
+  margin-top: 20px;
+  /* Espacio superior entre el título y otros elementos */
+}
+
+/* Estilo del título principal */
+.objetivos .contenido-principal h2 {
+  font-family: 'Playfair Display', serif;
+  /* Fuente utilizada para el título */
+  font-size: 36px;
+  /* Tamaño de la fuente */
+  font-style: italic;
+  color: #062140;
+  /* Color del texto */
+}
+
+/* Flexbox para el contenedor de los rectángulos */
+.objetivos .objetivos-content {
+  display: flex;
+  /* Establece un contenedor flexible */
+  justify-content: center;
+  /* Centra las tarjetas horizontalmente */
+  flex-wrap: wrap;
+  /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
+  gap: 10px;
+  /* Espacio pequeño entre las tarjetas */
+  margin-top: 10px;
+  /* Ajuste para la separación superior */
+}
+
+/* Estilo para cada tarjeta (rectángulo) */
+.objetivos .objetivos-content .rectangulo {
+  width: 480px;
+  /* Ancho de cada tarjeta */
+  height: 300px;
+  /* Alto de cada tarjeta */
+  border: 1px solid #ddd;
+  /* Borde con color gris claro */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Esconde el contenido que sobresalga */
+  display: flex;
+  /* Usa un contenedor flexible */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: flex-start;
+  /* Alinea los elementos al inicio (arriba) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Animación de transición */
+}
+
+/* Estilo de la imagen dentro de cada tarjeta */
+.objetivos .objetivos-content .rectangulo img {
+  width: 100px;
+  /* Ancho de la imagen */
+  height: 100px;
+  /* Alto de la imagen */
+  margin-top: 10px;
+  /* Espacio superior entre la imagen y el borde */
+}
+
+/* Contenedor del texto dentro de cada tarjeta */
+.objetivos .objetivos-content .rectangulo-texto {
+  padding: 0px;
+  /* Espacio interno alrededor del contenido del texto */
+  height: auto;
+  /* Altura automática para adaptarse al contenido */
+  display: flex;
+  /* Usa un contenedor flexible para el texto */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  justify-content: flex-start;
+  /* Alinea los elementos al inicio (arriba) */
+}
+
+/* Estilo para los títulos dentro de cada tarjeta */
+.objetivos .objetivos-content .rectangulo-texto h3 {
+  font-family: 'Playfair Display', serif;
+  /* Fuente Playfair Display */
+  font-weight: 700;
+  /* Peso Bold */
+  font-style: italic;
+  /* Estilo en cursiva */
+  font-size: 35px;
+  /* Tamaño del texto del título */
+  color: #163C72;
+  /* Color del título */
+  margin-bottom: 0px;
+  /* Espacio inferior debajo del título */
+}
+
+/* Estilo para el párrafo de texto dentro de cada tarjeta */
+.objetivos .objetivos-content .rectangulo-texto p {
+  font-family: 'Poppins', sans-serif;
+  /* Fuente Poppins Light */
+  font-weight: 300;
+  /* Peso Light */
+  font-size: 18px;
+  /* Tamaño de la fuente del párrafo */
+  color: #333;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el texto */
+  line-height: 1.5;
+  /* Altura de línea para mejorar la legibilidad */
+}
+
+
+/* Estilo del rectángulo al hacer hover */
+.objetivos .objetivos-content .rectangulo:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal de la sección de objetivos */
+.objetivos .contenido-principal {
+  text-align: center;
+  /* Centra el texto del título */
+  margin-top: 20px;
+  /* Espacio superior entre el título y otros elementos */
+  padding-bottom: 30px;
+}
+
+/* Estilo del título principal */
+.objetivos .contenido-principal h2 {
+  font-family: 'Playfair Display', serif;
+  /* Fuente utilizada para el título */
+  font-size: 36px;
+  /* Tamaño de la fuente */
+  color: #062140;
+  /* Color del texto */
+  margin-bottom: 30px;
+}
+
+/* Contenedor principal de la sección de valores */
+.objetivos .valores-content {
+  display: flex;
+  /* Establece un contenedor flexible */
+  flex-wrap: wrap;
+  /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
+  gap: 20px;
+  /* Espacio pequeño entre las tarjetas */
+  margin-top: 10px;
+  /* Ajuste para la separación superior */
+  justify-content: center;
+  /* Centra las tarjetas horizontalmente */
+}
+
+/* Estilo para cada tarjeta de valores */
+.objetivos .valores-content .valores {
+  width: 360px;
+  /* Ancho de cada tarjeta */
+  height: 460px;
+  /* Alto de cada tarjeta */
+  border: 1px solid #ddd;
+  /* Borde con color gris claro */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Esconde el contenido que sobresalga */
+  display: flex;
+  /* Usa un contenedor flexible */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: flex-start;
+  /* Alinea los elementos al inicio (arriba) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Animación de transición */
+}
+
+/* Estilo de la imagen dentro de cada bloque */
+.objetivos .valores-content .valores .valores-img {
+  width: 100px;
+  /* Ancho de la imagen */
+  height: 100px;
+  /* Alto de la imagen */
+  margin-top: 10px;
+  /* Espacio superior entre la imagen y el borde */
+}
+
+/* Contenedor del texto dentro de cada bloque */
+.objetivos .valores-content .valores .rectangulo-texto {
+  padding: 10px;
+  /* Espacio interno alrededor del contenido del texto */
+  height: auto;
+  /* Altura automática para adaptarse al contenido */
+  display: flex;
+  /* Usa un contenedor flexible para el texto */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  justify-content: flex-start;
+  /* Alinea los elementos al inicio (arriba) */
+}
+
+/* Estilo para los títulos dentro de cada bloque */
+.objetivos .valores-content .valores .rectangulo-texto h3 {
+  font-family: 'Poppins', sans-serif;
+  /* Fuente Poppins ExtraBold */
+  font-weight: 200;
+  /* Peso ExtraBold */
+  font-size: 24px;
+  /* Tamaño del texto del título */
+  color: #163C72;
+  /* Color del título */
+  margin-bottom: 15px;
+  /* Espacio inferior debajo del título */
+}
+
+
+/* Estilo para el párrafo de texto dentro de cada bloque */
+.objetivos .valores-content .valores .rectangulo-texto p {
+  font-family: 'Poppins', sans-serif;
+  /* Fuente Poppins Light */
+  font-weight: 300;
+  /* Peso Light */
+  font-size: 18px;
+  /* Tamaño de la fuente del párrafo */
+  color: #333;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el texto */
+  line-height: 1.5;
+  /* Altura de línea para mejorar la legibilidad */
+}
+
+
+/* Estilo del bloque al hacer hover */
+.objetivos .valores-content .valores:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad para laptops (1024px o más) */
+@media (max-width: 1024px) {
+  .objetivos .contenido-principal h2 {
+    font-size: 32px;
+  }
+
+  .objetivos .objetivos-content .rectangulo {
+    width: 400px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .objetivos .objetivos-content .rectangulo img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .objetivos .objetivos-content .rectangulo-texto h3 {
+    font-size: 30px;
+  }
+}
+
+/* Responsividad para tablets (entre 768px y 1024px) */
+@media (max-width: 768px) {
+  .objetivos .contenido-principal h2 {
+    font-size: 28px;
+  }
+
+  .objetivos .objetivos-content {
+    gap: 15px;
+  }
+
+  .objetivos .objetivos-content .rectangulo {
+    width: 320px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .objetivos .objetivos-content .rectangulo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .objetivos .objetivos-content .rectangulo-texto h3 {
+    font-size: 26px;
+  }
+}
+
+/* Responsividad para celulares (menos de 768px) */
+@media (max-width: 576px) {
+  .objetivos .contenido-principal h2 {
+    font-size: 24px;
+  }
+
+  .objetivos .objetivos-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .objetivos .objetivos-content .rectangulo {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .objetivos .objetivos-content .rectangulo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .objetivos .objetivos-content .rectangulo-texto h3 {
+    font-size: 22px;
+  }
+}

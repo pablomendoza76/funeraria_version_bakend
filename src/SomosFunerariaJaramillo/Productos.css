@@ -1,0 +1,100 @@
+/* Productos.css */
+
+/* Estilos generales */
+.productos {
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal de tarjetas */
+.productos .contenido-principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+/* Estilo para el título */
+.productos .contenido-principal h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 36px;
+    color: #062140;
+    text-align: center; /* Centrar el título */
+    margin-bottom: -15px;
+}
+
+/* Descripción de la presentación */
+.productos .contenido-principal .Presentacion h4 {
+    font-size: 1.25rem;
+    color: #000000;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para las tarjetas */
+.productos .contenido-principal .tarjeta {
+    height: 315px; /* Ajusta la altura */
+    width: 500px; /* Ajusta el ancho para que las tarjetas sean más grandes */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 8px rgba(0.1, 0.1, 0.1, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #e7e9eb; /* Borde más visible */
+}
+
+/* Efecto hover en las tarjetas */
+.productos .contenido-principal .tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #FFFDF0;
+}
+
+/* Imagen dentro de las tarjetas */
+.productos .contenido-principal .tarjeta img {
+    width: 100%;
+    height: 200px; /* Ajuste de altura para las imágenes */
+    object-fit: contain; /* Asegura que la imagen se vea completamente sin recortarse */
+    border-radius: 10px;
+    margin-bottom: -10px;
+}
+
+.productos .contenido-principal .tarjeta p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.5;
+    flex-grow: 1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; /* Esto asegura que se utilice la versión Light */
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+    .productos .tarjeta {
+        width: 48%; /* Dos tarjetas por fila en pantallas de laptop */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .productos .tarjeta {
+        width: 48%; /* Dos tarjetas por fila en pantallas de tablet */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productos .tarjeta {
+        width: 100%; /* Una tarjeta por fila en pantallas de celular */
+        margin-bottom: 20px;
+    }
+}

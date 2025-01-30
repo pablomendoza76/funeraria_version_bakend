@@ -1,0 +1,172 @@
+/* Estilos globales */
+.explorar-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Estilos del título principal */
+.explorar-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.explorar-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-style: italic;
+    font-weight: 900;
+    color: #062140;
+    margin-bottom: 10px;
+}
+
+/* Botón de regresar a Cursos Home */
+.explorar-btn-back {
+    padding: 10px 20px;
+    background-color: #fa6363; /* Naranja llamativo */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px; /* Espacio superior */
+}
+
+.explorar-btn-back:hover {
+    background-color: #2200ff; /* Naranja más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de ampliación al pasar el mouse */
+}
+
+.explorar-btn-back:active {
+    transform: scale(0.95); /* Efecto de pulsación */
+}
+
+/* Contenedor de las tarjetas */
+.explorar-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Distribución de las tarjetas */
+    gap: 10px; /* Cambia este valor para modificar el espacio entre tarjetas */
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Estilos para las tarjetas con tamaño fijo */
+.explorar-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Ancho fijo */
+    height: 480px; /* Altura fija */
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.explorar-card:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+}
+
+/* Estilos para las imágenes */
+.explorar-image-container {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 120px; /* Tamaño fijo para imágenes pequeñas */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacio entre imagen y contenido */
+}
+
+.explorar-image {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 100%; /* Ajusta a la altura del contenedor */
+    object-fit: cover; /* Recorta la imagen para cubrir el contenedor */
+}
+
+/* Estilo del precio */
+.explorar-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #3891f4; /* Azul llamativo */
+    margin-bottom: 10px; /* Espacio debajo del precio */
+}
+
+/* Botón de inscripción */
+.explorar-btn-inscribir {
+    padding: 8px 16px;
+    background-color: #007bff; /* Azul principal */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explorar-btn-inscribir:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilos para laptops (pantallas anchas pero menores a desktop completo) */
+@media screen and (max-width: 1200px) {
+    .explorar-header h1 {
+        font-size: 38px; /* Reduce el tamaño del título */
+    }
+    .explorar-courses {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta las columnas */
+        gap: 15px; /* Incrementa el espacio entre tarjetas */
+    }
+    .explorar-card {
+        width: 250px; /* Ajusta el ancho de las tarjetas */
+        height: 450px; /* Ajusta la altura de las tarjetas */
+    }
+}
+
+/* Estilos para tablets (ancho entre 768px y 1024px) */
+@media screen and (max-width: 1024px) {
+    .explorar-header h1 {
+        font-size: 32px; /* Reduce el tamaño del título */
+    }
+    .explorar-courses {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más columnas si cabe */
+        gap: 10px; /* Menos espacio entre tarjetas */
+    }
+    .explorar-card {
+        width: 220px; /* Reduce el ancho de las tarjetas */
+        height: 400px; /* Reduce la altura de las tarjetas */
+    }
+    .explorar-btn-back {
+        font-size: 14px; /* Reduce el tamaño del texto en el botón */
+        padding: 8px 16px;
+    }
+}
+
+/* Estilos para celulares (ancho menor o igual a 768px) */
+@media screen and (max-width: 768px) {
+    .explorar-header h1 {
+        font-size: 26px; /* Título más pequeño */
+    }
+    .explorar-courses {
+        grid-template-columns: 1fr; /* Una tarjeta por fila */
+        gap: 10px; /* Espacio mínimo entre tarjetas */
+    }
+    .explorar-card {
+        width: 90%; /* Ancho adaptativo */
+        height: auto; /* Altura automática */
+        padding: 20px; /* Ajusta el padding */
+    }
+    .explorar-image-container {
+        height: 100px; /* Reduce la altura de las imágenes */
+    }
+    .explorar-btn-inscribir {
+        font-size: 12px; /* Botón más pequeño */
+        padding: 6px 12px;
+    }
+}

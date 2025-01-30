@@ -1,0 +1,104 @@
+/* Página principal */
+.imagen-corporativa-page {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contenedor del título y las tarjetas */
+.imagen-corporativa-page .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo del título */
+.imagen-corporativa-page .content-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 36px;
+    color: #062140;
+    text-align: center;
+    margin-bottom: 40px; /* Espacio entre el título y las tarjetas */
+}
+
+/* Contenedor de las tarjetas en fila */
+.imagen-corporativa-page .cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre las tarjetas */
+    width: 100%;
+    flex-wrap: wrap; /* Asegura que las tarjetas se ajusten en pantallas pequeñas */
+}
+
+/* Tarjetas individuales */
+.imagen-corporativa-page.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; /* Tamaño fijo de las tarjetas */
+}
+
+.imagen-corporativa-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de la tarjeta */
+.imagen-corporativa-page .card img {
+    margin-top: 10px;
+    max-width: 250px;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+/* Contenido de la tarjeta */
+.imagen-corporativa-page .card-content {
+    padding: 10px;
+}
+
+.imagen-corporativa-page .card-content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+}
+
+.card-content a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Ajusta el ancho en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-row {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .card {
+        width: 100%; /* Ocupa el ancho completo en móviles */
+        max-width: 320px; /* Evita que sean demasiado grandes */
+    }
+}

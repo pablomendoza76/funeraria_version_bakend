@@ -1,0 +1,134 @@
+/* Estilos globales para la sección DepartamentosMision */
+.departamentos-mision {
+  font-family: Arial, sans-serif; /* Establece la fuente para el contenido de la sección */
+}
+
+/* Estilos para el contenido principal */
+.contenido-principal {
+  max-width: 1200px; /* Establece un ancho máximo de 1200px */
+  margin: 0 auto; /* Centra el contenido en la página */
+  text-align: center; /* Centra el texto */
+}
+.contenido-principal h2 {
+  font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 36px;
+    color: #062140;
+    text-align: center; /* Centrar el título */
+    margin-bottom: 0px;
+}
+
+/* Estilo para los elementos dentro de la sección departamentos */
+.departamentos-content {
+  display: grid; /* Utiliza grid para organizar los elementos */
+  grid-template-columns: repeat(3, 1fr); /* Establece 3 columnas de igual tamaño */
+  gap: 20px; /* Espacio entre las tarjetas */
+  margin: 20px; /* Margen alrededor de la sección */
+  justify-content: center; /* Centra las tarjetas si hay menos de 3 en la fila */
+}
+
+/* Estilo para cada tarjeta */
+.departamento {
+  background-color: #ffffff; /* Fondo blanco para el departamento */
+  border: 1px solid #ddd; /* Borde sutil alrededor del departamento */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Evita que el contenido se desborde */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega sombra suave alrededor del departamento */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Agrega una transición suave para el hover */
+  display: flex;
+  flex-direction: column; /* Asegura que los contenidos dentro de la tarjeta se apilen verticalmente */
+  width: 100%; /* Hace que las tarjetas ocupen todo el ancho disponible de su columna */
+  height: 375px; /* Permite que las tarjetas se ajusten automáticamente al contenido */
+}
+
+
+/* Efecto de hover sobre el departamento */
+.departamento:hover {
+  transform: translateY(-5px); /* Desplaza el departamento ligeramente hacia arriba */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta la sombra al hacer hover */
+}
+
+/* Estilo para las imágenes dentro de los departamentos */
+.departamento img {
+  width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+  height: auto; /* Ajusta la altura de la imagen automáticamente */
+  object-fit: cover; /* Ajusta la imagen para cubrir el área sin distorsionar */
+  border-bottom: 1px solid #ddd; /* Agrega una línea divisoria debajo de la imagen */
+}
+
+/* Estilo para el título dentro de cada departamento */
+.departamento h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 25px;
+  color: #3891f4; /* Color del texto del título */
+  margin: -2px; /* Agrega margen alrededor del título */
+}
+
+/* Estilo para la descripción de la misión dentro de cada departamento */
+.departamento .mision {
+  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
+  font-weight: 300; /* Usa el peso ligero de la fuente */
+  color: #000000; /* Color del texto */
+  padding: 0; /* Elimina relleno adicional */
+  margin-bottom: 0; /* Elimina margen inferior */
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* Media Queries para Responsividad */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .navbar .menu ul {
+    display: block; /* Pone el menú en bloque en pantallas más pequeñas */
+  }
+
+  .departamentos-content {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
+  }
+
+  .contenido-principal h2 {
+    font-size: 28px; /* Ajusta el tamaño de fuente */
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar .menu ul {
+    display: block;
+    text-align: center; /* Centra los elementos en pantallas pequeñas */
+  }
+
+  .departamentos-content {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .contenido-principal h2 {
+    font-size: 24px; /* Ajusta el tamaño de fuente */
+  }
+
+  .navbar .logo h1 {
+    font-size: 20px; /* Ajusta el tamaño del logo */
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .navbar .menu ul {
+    display: block;
+    text-align: center;
+  }
+
+  .departamentos-content {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .contenido-principal h2 {
+    font-size: 20px; /* Ajusta el tamaño de fuente */
+  }
+
+  .navbar .logo h1 {
+    font-size: 18px; /* Ajusta el tamaño del logo */
+  }
+}

@@ -1,0 +1,120 @@
+/* Estilos generales */
+.historia {
+  font-family: Arial, sans-serif; /* Define la fuente del contenido */
+}
+
+.historia .contenido-principal h2 {
+  font-family: 'Playfair Display', serif; /* Asegúrate de que la fuente esté escrita correctamente */
+  font-weight: 900; /* Negrita */
+  font-style: italic;
+  font-size: 36px;
+  color: #062140;
+}
+
+/* Estilos para los eventos históricos */
+.historical-event {
+  display: flex; /* Utiliza flexbox para los eventos históricos */
+  justify-content: space-between; /* Espacia los elementos de manera equitativa */
+  align-items: center; /* Alinea los elementos verticalmente */
+  margin: 20px 0; /* Añade espacio entre los eventos históricos */
+  padding: 10px; /* Relleno interno de cada evento histórico */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 
+              0 -4px 6px rgba(0, 0, 0, 0.0), 
+              4px 0 6px rgba(0, 0, 0, 0.2), 
+              -4px 0 6px rgba(0, 0, 0, 0.2); /* Sombra en los 4 lados */
+  transition: transform 0.3s ease; /* Efecto de hover en el contenedor */
+}
+
+.historical-event:hover {
+  transform: scale(1.05); /* Aumenta el tamaño del contenedor al hacer hover */
+}
+
+.historical-event img {
+  width: 220px; /* Ancho fijo para la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 8px; /* Bordes redondeados en la imagen */
+}
+
+.event-content {
+  margin-left: 20px; /* Espacio a la izquierda del contenido */
+  flex: 1; /* Hace que el contenido ocupe el espacio restante */
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding: 20px; /* Relleno interno del contenido */
+  background-color:  #ffffff; /* Fondo blanco para el contenido */
+  border-radius: 8px; /* Bordes redondeados en el contenido */
+}
+
+.event-content h3 {
+  font-family: 'Playfair Display', serif; /* Fuente para el título */
+  font-size: 36px; /* Tamaño medio para el título */
+  font-weight: bold; /* Negrita para el título */
+  margin: 0; /* Elimina el margen alrededor del título */
+  color: #C6AF6B ; /* Color para el título h3 */
+}
+
+.event-content p {
+  font-family: 'Poppins light', sans-serif; /* Fuente para el párrafo */
+  font-weight: 400; /* Peso normal para el párrafo */
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+  line-height: 1.5; /* Espaciado entre líneas */
+  color: #555555; /* Color del texto en el párrafo */
+  margin: 0 0 10px; /* Márgenes para separar los párrafos */
+}
+.event-content:hover {
+  background-color: #f4f4f4;
+}
+/* Ajustes responsivos para laptops */
+@media (max-width: 1024px) {
+  .historical-event {
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+  }
+
+  .historical-event img {
+    width: 80%; /* Redimensiona la imagen en pantallas pequeñas */
+    margin: 0 auto; /* Centra la imagen */
+  }
+
+  .event-content {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-top: 15px; /* Añade margen superior */
+  }
+}
+
+/* Ajustes responsivos para tablets */
+@media (max-width: 768px) {
+  .historical-event {
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+  }
+
+  .historical-event img {
+    width: 100%; /* Redimensiona la imagen para que ocupe todo el ancho */
+    margin: 10px 0; /* Añade márgenes superior e inferior */
+  }
+
+  .event-content {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-top: 10px; /* Añade margen superior */
+  }
+}
+
+/* Ajustes responsivos para celulares */
+@media (max-width: 480px) {
+  .historical-event {
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+  }
+
+  .historical-event img {
+    width: 100%; /* Redimensiona la imagen para que ocupe todo el ancho */
+    margin: 10px 0; /* Añade márgenes superior e inferior */
+  }
+
+  .event-content {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-top: 10px; /* Añade margen superior */
+  }
+}

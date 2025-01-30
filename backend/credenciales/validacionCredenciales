@@ -1,0 +1,96 @@
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import db from '../database/db.js';  // Conexión a la base de datos
+
+// Función para verificar las credenciales del usuario (correo y contraseña)
+async function verificarCredenciales(correo, contrasena) {
+  try {
+    // Buscar la credencial en la base de datos por el correo electrónico
+    const query = `SELECT * FROM credenciales WHERE correo = ?`;
+    const [resultados] = await db.query(query, { replacements: [correo] });
+
+    if (resultados.length === 0) {
+      console.log('Correo no encontrado');
+      return null;  // Usuario no encontrado
+    }
+
+    const credencial = resultados[0];  // Tomamos el primer resultado
+
+    // Comparar la contraseña ingresada con la contraseña encriptada en la base de datos
+    const esValida = await bcrypt.compare(contrasena, credencial.contrasena);
+
+    if (!esValida) {
+      console.log('Contraseña incorrecta');
+      return null;  // Contraseña incorrecta
+    }
+
+    return credencial;  // Si todo está bien, devolvemos la credencial
+  } catch (error) {
+    console.error('Error al verificar las credenciales:', error);
+    throw error;
+  }
+}
+
+// Función para generar un token JWT
+function generarToken(credencial) {
+  const payload = {
+    id: credencial.id,
+    correo: credencial.correo,
+    departamento: credencial.departamento,
+  };
+
+  // Generar un JWT que expira en 1 hora
+  const token = jwt.sign(payload, 'mi_secreto_jwt', { expiresIn: '1h' });
+  return token;
+}
+
+// Ruta de inicio de sesión en Express
+export const login = async (req, res) => {
+  const { correo, contrasena } = req.body;  // Recibimos correo y contraseña
+
+  try {
+    // Verificar las credenciales
+    const credencial = await verificarCredenciales(correo, contrasena);
+
+    if (!credencial) {
+      return res.status(401).json({ mensaje: 'Credenciales incorrectas o acceso denegado' });
+    }
+
+    // Mapeo de departamentos permitidos
+    const departamentosPermitidos = {
+      'Servicio al Cliente': 'cliente',
+      'Administración': 'admin',
+      'Soporte Técnico': 'soporte',
+      'Recursos Humanos': 'rrhh',
+    };
+
+    const departamentoNombre = departamentosPermitidos[credencial.departamento];
+
+    if (!departamentoNombre) {
+      return res.status(403).json({ mensaje: 'Acceso denegado: Departamento no permitido' });
+    }
+
+    // Generar el token JWT
+    const token = generarToken(credencial);
+
+    // Enviar el token al cliente
+    return res.status(200).json({
+      mensaje: 'Inicio de sesión exitoso',
+      token,
+      departamento: departamentoNombre,
+    });
+  } catch (error) {
+    console.error('Error en el inicio de sesión:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+};
+
+// Ruta para cerrar sesión
+export const logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ mensaje: 'Error al cerrar sesión' });
+    }
+    res.status(200).json({ mensaje: 'Sesión cerrada con éxito' });
+  });
+};
