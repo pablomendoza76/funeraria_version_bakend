@@ -73,7 +73,7 @@ function Objetivos() {
                 {activeMenu === 'formacion' && (
                   <ul className="dropdown-menu">
                     <li>
-                      <Link to="/Cursos/Ofertas">
+                      <Link to="/Cursos/Home">
                         Ofertas
                       </Link>
                     </li>

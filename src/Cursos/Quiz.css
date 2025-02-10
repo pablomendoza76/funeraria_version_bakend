@@ -1,6 +1,7 @@
+/* Estilos para la página del quiz */
 .quiz-page {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Fondo gradiente */
   color: white;
   min-height: 100vh;
   padding: 20px;
@@ -9,6 +10,7 @@
   align-items: center;
 }
 
+/* Encabezado del quiz */
 .quiz-header {
   text-align: center;
   margin-bottom: 20px;
@@ -16,42 +18,54 @@
 
 .quiz-header h1 {
   font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 .quiz-header p {
   font-size: 1.2rem;
-  opacity: 0.8;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.8);
 }
 
+/* Estilos para los botones */
 .home-btn-secondary, .quiz-submit-btn {
   background-color: #ffffff;
   color: #2575fc;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 12px; /* Bordes redondeados */
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
   transition: transform 0.2s ease, background-color 0.3s ease;
-  margin-top: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 .home-btn-secondary:hover, .quiz-submit-btn:hover {
   transform: scale(1.05);
   background-color: #6a11cb;
   color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
 }
 
+.home-btn-secondary:active, .quiz-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Estilos para el formulario de preguntas */
 .quiz-form {
   background: #ffffff;
   color: #333;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 30px;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave */
 }
 
 .quiz-question {
@@ -59,107 +73,118 @@
 }
 
 .quiz-question h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #2575fc;
 }
 
+/* Estilo de las opciones de respuesta */
 .quiz-option {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  padding: 12px;
+  background: #f7f7f7;
+  border-radius: 12px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.quiz-submit-btn {
-  width: 100%;
+.quiz-option:hover {
+  background: #e0e0e0; /* Fondo más oscuro al pasar el mouse */
+  transform: scale(1.02);
 }
 
+/* Estilos para el resultado del quiz */
 .quiz-result {
   background: #ffffff;
   color: #333;
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 30px;
   max-width: 600px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave */
 }
 
 .quiz-result h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
+  color: #2575fc;
 }
 
 .quiz-result p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #555;
 }
+
 /* Responsividad para laptops (pantallas entre 1024px y 1200px) */
 @media screen and (max-width: 1200px) {
   .quiz-header h1 {
-      font-size: 2rem; /* Reduce el tamaño del encabezado */
+    font-size: 2rem;
   }
   .quiz-header p {
-      font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+    font-size: 1rem;
   }
   .quiz-form, .quiz-result {
-      max-width: 500px; /* Reduce el ancho máximo */
-      padding: 15px; /* Ajusta el padding */
+    max-width: 500px;
+    padding: 20px;
   }
   .quiz-question h3 {
-      font-size: 1.3rem; /* Reduce ligeramente el tamaño de las preguntas */
+    font-size: 1.3rem;
   }
   .home-btn-secondary, .quiz-submit-btn {
-      font-size: 0.95rem; /* Botones más pequeños */
-      padding: 8px 12px;
+    font-size: 1rem;
+    padding: 10px 15px;
   }
 }
 
 /* Responsividad para tablets (pantallas entre 768px y 1024px) */
 @media screen and (max-width: 1024px) {
   .quiz-header h1 {
-      font-size: 1.8rem; /* Reduce el tamaño del encabezado */
+    font-size: 1.8rem;
   }
   .quiz-header p {
-      font-size: 0.9rem; /* Texto más compacto */
+    font-size: 0.9rem;
   }
   .quiz-form, .quiz-result {
-      max-width: 400px; /* Ajusta el ancho máximo */
-      padding: 10px; /* Reduce el padding */
+    max-width: 400px;
+    padding: 15px;
   }
   .quiz-question h3 {
-      font-size: 1.2rem; /* Reduce el tamaño de las preguntas */
+    font-size: 1.2rem;
   }
   .home-btn-secondary, .quiz-submit-btn {
-      font-size: 0.9rem; /* Botones más compactos */
-      padding: 8px 10px;
+    font-size: 0.95rem;
+    padding: 10px 12px;
   }
 }
 
 /* Responsividad para celulares (pantallas menores o iguales a 768px) */
 @media screen and (max-width: 768px) {
   .quiz-page {
-      padding: 10px; /* Reduce el padding general */
+    padding: 10px;
   }
   .quiz-header h1 {
-      font-size: 1.5rem; /* Encabezado más pequeño */
+    font-size: 1.5rem;
   }
   .quiz-header p {
-      font-size: 0.8rem; /* Subtítulo más compacto */
+    font-size: 0.8rem;
   }
   .quiz-form, .quiz-result {
-      max-width: 100%; /* Usa todo el ancho disponible */
-      padding: 10px; /* Reduce el padding */
+    width: 100%;
+    padding: 10px;
   }
   .quiz-question h3 {
-      font-size: 1rem; /* Tamaño compacto para las preguntas */
+    font-size: 1rem;
   }
   .quiz-option {
-      margin-bottom: 6px; /* Reduce el espaciado entre opciones */
+    margin-bottom: 8px;
   }
   .home-btn-secondary, .quiz-submit-btn {
-      font-size: 0.85rem; /* Botones más pequeños */
-      padding: 6px 8px;
+    font-size: 0.85rem;
+    padding: 6px 8px;
   }
   .quiz-submit-btn {
-      width: 100%; /* Asegura que ocupe todo el ancho */
+    width: 100%;
   }
 }

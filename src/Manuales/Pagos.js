@@ -48,7 +48,7 @@ function Pagos() {
                                 <button className="dropdown-btn">Formación y Capacitación</button>
                                 {activeMenu === 'formacion' && (
                                     <ul className="dropdown-menu">
-                                        <li><Link to="/Cursos/Ofertas">Ofertas</Link></li>
+                                        <li><Link to="/Cursos/Home">Ofertas</Link></li>
                                         <li>Políticas</li>
                                         <li>Éxitos profesionales</li>
                                     </ul>

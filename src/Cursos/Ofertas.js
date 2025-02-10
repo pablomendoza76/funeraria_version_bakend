@@ -8,14 +8,34 @@ const Ofertas = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Validación de usuario y contraseña
-    if (email === 'ivan@fuja.com' && password === '123') {
-      setError('');
-      navigate("/Cursos/Home"); // Redirige a la página deseada
-    } else {
-      setError('Usuario o contraseña incorrectos.');
+
+    // Enviar las credenciales al servidor para validarlas
+    try {
+      const response = await fetch('http://localhost:8000/pablo/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+        credentials: 'include', // Para manejar las cookies de sesión
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Si la respuesta es exitosa, almacenar la autenticación
+        localStorage.setItem('isAuthenticated', 'true'); // Guardamos el estado de autenticación
+        setError('');
+        navigate('/Cursos/Home'); // Redirigir a la página de inicio
+      } else {
+        setError(data.message); // Mostrar mensaje de error del servidor
+      }
+
+    } catch (err) {
+      setError('Error al conectar con el servidor');
+      console.error('Error:', err);
     }
   };
 

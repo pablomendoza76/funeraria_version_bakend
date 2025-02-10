@@ -10,14 +10,14 @@ const Explorar = () => {
   });
 
   const cursos = [
-    { id: 1, name: "Técnicas Avanzadas de Servicio al Cliente", image: "../img/curso1.jpg", description: "Mejora la experiencia del cliente con técnicas avanzadas.", price: "$25" },
-    { id: 2, name: "Comunicación Efectiva en Atención al Cliente", image: "../img/curso2.jpg", description: "Desarrolla habilidades de comunicación profesional.", price: "$20" },
-    { id: 3, name: "Gestión de Quejas y Reclamos", image: "../img/curso3.jpg", description: "Aprende a manejar situaciones difíciles con los clientes.", price: "$30" },
-    { id: 4, name: "Primeros Auxilios en el Trabajo", image: "../img/curso4.jpg", description: "Capacitación básica para responder a emergencias.", price: "$40" },
-    { id: 5, name: "Ergonomía y Postura Laboral", image: "../img/curso5.jpg", description: "Prevención de lesiones laborales con buena postura.", price: "$35" },
-    { id: 6, name: "Mindfulness para Reducir el Estrés", image: "../img/curso6.jpg", description: "Técnicas de mindfulness para mejorar tu bienestar.", price: "$15" },
-    { id: 7, name: "Servicio al Cliente con Inteligencia Emocional", image: "../img/curso7.jpg", description: "Usa la inteligencia emocional para mejorar relaciones.", price: "$30" },
-    { id: 8, name: "Higiene y Seguridad Ocupacional", image: "../img/curso8.jpg", description: "Conoce las normativas y prácticas de seguridad.", price: "$50" },
+    { id: 1, name: "Técnicas Avanzadas de Servicio al Cliente", image: "../img/curso1.jpg", description: "Mejora la experiencia del cliente con técnicas avanzadas." },
+    { id: 2, name: "Comunicación Efectiva en Atención al Cliente", image: "../img/curso2.jpg", description: "Desarrolla habilidades de comunicación profesional." },
+    { id: 3, name: "Gestión de Quejas y Reclamos", image: "../img/curso3.jpg", description: "Aprende a manejar situaciones difíciles con los clientes." },
+    { id: 4, name: "Primeros Auxilios en el Trabajo", image: "../img/curso4.jpg", description: "Capacitación básica para responder a emergencias." },
+    { id: 5, name: "Ergonomía y Postura Laboral", image: "../img/curso5.jpg", description: "Prevención de lesiones laborales con buena postura." },
+    { id: 6, name: "Mindfulness para Reducir el Estrés", image: "../img/curso6.jpg", description: "Técnicas de mindfulness para mejorar tu bienestar." },
+    { id: 7, name: "Servicio al Cliente con Inteligencia Emocional", image: "../img/curso7.jpg", description: "Usa la inteligencia emocional para mejorar relaciones." },
+    { id: 8, name: "Higiene y Seguridad Ocupacional", image: "../img/curso8.jpg", description: "Conoce las normativas y prácticas de seguridad." },
   ];
 
   const handleInscribir = (curso) => {
@@ -47,7 +47,6 @@ const Explorar = () => {
             <img src={curso.image} alt={curso.name} className="explorar-image" />
             <h3>{curso.name}</h3>
             <p>{curso.description}</p>
-            <span className="explorar-price">{curso.price}</span>
             <button className="explorar-btn-inscribir" onClick={() => handleInscribir(curso)}>
               Inscribirme
             </button>
